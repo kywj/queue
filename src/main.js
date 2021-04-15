@@ -14,6 +14,7 @@ btnCreateNumber.onclick = () => {
   spanQueue.innerText = JSON.stringify(queue)
 }
 btnCallNumber.onclick = () => {
+  if(queue.length === 0){return alert('叫个毛线')}
   const m = queue.shift.call(queue)
   divScreen.innerText = `请 ${m} 号就餐`
   spanQueue.innerText = JSON.stringify(queue)
