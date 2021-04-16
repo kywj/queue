@@ -20,6 +20,13 @@ const removeFromList = (list, node) => {
   }
   p.next = x.next
 }
+const travelList = (list, fn) => {
+  let x = list
+  while(x !== null){
+    fn(x)
+    x = x.next
+  }
+}
 const createNode = value => {
   return {
     data: value, 
@@ -31,7 +38,6 @@ const list = createList(10)
 const node2 = appendList(list, 20)
 const node3 = appendList(list, 30)
 const node4 = appendList(list, 40)
-removeFromList(list, node3)
-
-console.log('list');
-console.log(list);
+travelList(list, (node) => {
+  console.log(node.data)
+})
